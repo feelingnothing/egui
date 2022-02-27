@@ -1,6 +1,6 @@
 [package]
 name = "egui_glow"
-version = "0.16.0"
+version = "0.17.0"
 authors = ["Emil Ernerfeldt <emil.ernerfeldt@gmail.com>"]
 description = "Bindings for using egui natively using the glow library"
 edition = "2021"
@@ -55,11 +55,11 @@ winit = ["egui-winit", "glutin"]
 
 
 [dependencies]
-egui = { version = "0.16.0", path = "../egui", default-features = false, features = [
+egui = { version = "0.17.0", path = "../egui", default-features = false, features = [
   "convert_bytemuck",
   "single_threaded",
 ] }
-epi = { version = "0.16.0", path = "../epi", optional = true }
+epi = { version = "0.17.0", path = "../epi", optional = true }
 
 bytemuck = "1.7"
 glow = "0.11"
@@ -67,8 +67,13 @@ memoffset = "0.6"
 tracing = "0.1"
 
 [target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+<<<<<<< HEAD
 egui-winit = { version = "0.16.0", path = "../egui-winit", default-features = false, features = ["dark-light", "epi"], optional = true }
 glutin = { git = "https://github.com/feelingnothing/glutin.git", optional = true }
+=======
+egui-winit = { version = "0.17.0", path = "../egui-winit", default-features = false, features = ["dark-light", "epi"], optional = true }
+glutin = { version = "0.28.0", optional = true }
+>>>>>>> 833829e3d857835e5b2983b3ec6297c5e06f0197
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
 web-sys = { version = "0.3", features=["console"] }
